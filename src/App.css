@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Search
+
+# Content
+
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+* {
+  font-variant-ligatures: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+  line-height: normal;
 }
 
-.App-link {
-  color: #61dafb;
+textarea {
+  overflow: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+li,
+a,
+ul li {
+  font-family: sans-serif;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  margin-block-start: 0.67em;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  letter-spacing: 1.5px;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+}
+
+/*--------------------------------------------------------------
+# Search
+--------------------------------------------------------------*/
+.search,
+.search-submit {
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+}
+
+.search:hover,
+.search-submit:hover,
+.fa-search:hover {
+  border-color: #deb887;
+  color: #deb887;
 }
