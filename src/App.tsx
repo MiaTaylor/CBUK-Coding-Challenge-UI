@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import "./App.css";
 import Header from "./components/header/Header";
-import Students from "./components/students";
+import Routing from "./components/routing";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         ></script>
       </Helmet>
       <Header />
-      <Students />
+      <Routing />
     </div>
   );
 }

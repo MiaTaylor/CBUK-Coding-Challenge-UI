@@ -165,6 +165,11 @@ td {
   font-weight: 300;
 }
 
+tbody,
+td {
+  cursor: pointer;
+}
+
 /*--------------------------------------------------------------
 # CSS Flex-Box
 --------------------------------------------------------------*/
@@ -216,6 +221,21 @@ td {
   padding-bottom: 1em;
 }
 
+.p-left-4 {
+  padding-left: 4em;
+}
+
 .p-left-5 {
   padding-left: 5em;
+}
+
+.record {
+  padding: 1em;
+  margin-bottom: 5px;
+  border: 1px solid #deb887;
+}
+
+.record label {
+  color: #deb887;
+  padding-right: 1em;
 }
