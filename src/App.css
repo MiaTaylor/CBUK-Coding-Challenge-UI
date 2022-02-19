@@ -5,11 +5,10 @@
 # Typography
 # Elements
 # Forms
+# Tables
+# CSS Flex-Box
 # Search
-
 # Content
-
-# Media Queries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -55,15 +54,21 @@ textarea {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;500&display=swap");
+
 body,
 li,
 a,
 ul li {
-  font-family: sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 :-webkit-any(article, aside, nav, section) h1 {
   margin-block-start: 0.67em;
+}
+
+h1 {
+  color: #deb887;
 }
 
 /*--------------------------------------------------------------
@@ -126,14 +131,69 @@ textarea:focus {
 }
 
 /*--------------------------------------------------------------
+# Tables
+--------------------------------------------------------------*/
+table th,
+td {
+  padding: 0.5em;
+}
+
+table,
+tr {
+  border: 1px solid #deb887;
+}
+
+thead,
+tbody {
+  background-color: #f8f8f8;
+}
+
+th {
+  text-align: left;
+}
+
+tbody {
+  border: 5px solid #ffffff;
+}
+
+th {
+  color: #deb887;
+  font-weight: 500;
+}
+
+td {
+  font-weight: 300;
+}
+
+/*--------------------------------------------------------------
+# CSS Flex-Box
+--------------------------------------------------------------*/
+.flex-row-even {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/*--------------------------------------------------------------
 # Search
 --------------------------------------------------------------*/
+.search {
+  width: 45%;
+  font-weight: 300;
+}
+
+.search-submit {
+  background-color: #ffffff;
+}
+
+.search {
+  border: 2px solid #efefef;
+}
+
 .search,
 .search-submit {
-  padding: 1em;
-  margin: 1em;
-  border: 1px solid #efefef;
-  border-radius: 10px;
+  padding: 1em 1.5em;
 }
 
 .search:hover,
@@ -141,4 +201,21 @@ textarea:focus {
 .fa-search:hover {
   border-color: #deb887;
   color: #deb887;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+.container {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border: 1px solid #deb887;
+}
+
+.p-bottom-1 {
+  padding-bottom: 1em;
+}
+
+.p-left-5 {
+  padding-left: 5em;
 }

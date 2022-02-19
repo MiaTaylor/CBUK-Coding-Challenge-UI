@@ -7,4 +7,5 @@ written.
 npm install --save typescript @types/node @types/react @types/react-dom
 npm install react-helmet
 npm i @types/react-helmet
+npm install react-router-dom@6
 npm start

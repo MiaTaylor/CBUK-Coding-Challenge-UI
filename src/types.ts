@@ -1,0 +1,42 @@
+export type Student = {
+  source_id: string;
+  pupil_admission_number: string;
+  first_name: string;
+  legal_first_name: string;
+  middle_name: string;
+  last_name: string;
+  legal_last_name: string;
+  former_last_name: string;
+  gender: string;
+  year_code: string;
+  year_group_source_id: string;
+  dob: string;
+  upn: string;
+  former_upn: string;
+  uln: string;
+  is_eal: boolean;
+  free_meal: boolean;
+  free_meal_6: boolean;
+  fsm_review_date: null | string;
+  ethnicity_code: string;
+  is_pp: boolean;
+  service_child: boolean;
+  looked_after: boolean;
+  ever_in_care: boolean;
+  sen_category: string;
+  enrolment_status: string;
+  address_line_1: string;
+  address_line_2: string;
+  town_city: string;
+  county: string;
+  country: string;
+  postcode: string;
+  start_date: string;
+  end_date: string | null;
+  contacts: StudentContact[];
+};
+
+export type StudentContact = {
+  name: string;
+  relationship: string;
+};

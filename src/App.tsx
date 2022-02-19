@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import "./App.css";
-import SearchStudents from "./containers/SearchStudents";
+import Header from "./components/header/Header";
+import Students from "./components/students";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           crossOrigin="anonymous"
         ></script>
       </Helmet>
-      <SearchStudents />
+      <Header />
+      <Students />
     </div>
   );
 }
