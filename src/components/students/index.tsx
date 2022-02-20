@@ -1,12 +1,14 @@
 import { useState } from "react";
-import student_records from "../../student_records.json";
 import { Student } from "../../types";
 import Search from "../search";
 import StudentsTable from "./StudentsTable";
 
+interface StudentRecordsProps {
+  students: Student[];
+}
+
 // Logic for the search and table
-const StudentRecords = () => {
-  const [students] = useState<Student[]>(student_records.Students as Student[]);
+const StudentRecords = ({ students }: StudentRecordsProps) => {
   const [studentResults, setStudentResults] = useState<Student[]>(students);
 
   const searchRecords = (searchText: string) => {
@@ -26,7 +28,7 @@ const StudentRecords = () => {
   };
 
   return (
-    <div className="container p-left-5">
+    <div className="container">
       <div className="p-bottom-1">
         <Search searchRecords={searchRecords} />
       </div>

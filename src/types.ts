@@ -33,6 +33,7 @@ export type Student = {
   postcode: string;
   start_date: string;
   end_date: string | null;
+  star_rating: number | null;
   contacts: StudentContact[];
 };
 

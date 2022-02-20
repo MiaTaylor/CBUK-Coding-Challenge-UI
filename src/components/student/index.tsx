@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import student_records from "../../student_records.json";
 import { Student } from "../../types";
 import StudentView from "./View";
 
-const StudentPage = () => {
+interface StudentPageProps {
+  students: Student[];
+  updateStudent: (student: Student) => void;
+}
+
+const StudentPage = ({ students, updateStudent }: StudentPageProps) => {
   const { id }: any = useParams();
-  const [students] = useState<Student[]>(student_records.Students as Student[]);
   const [student, setStudent] = useState<Student | null>();
 
   useEffect(() => {
@@ -18,7 +21,13 @@ const StudentPage = () => {
     }
   }, [id, students]);
 
-  return <div>{student && <StudentView student={student} />}</div>;
+  return (
+    <div>
+      {student && (
+        <StudentView student={student} updateStudent={updateStudent} />
+      )}
+    </div>
+  );
 };
 
 export default StudentPage;

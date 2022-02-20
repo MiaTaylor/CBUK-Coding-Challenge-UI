@@ -1,16 +1,53 @@
 import { Student, StudentContact } from "../../types";
+import StarRating from "../star-rating/StarRating";
 
 interface StudentProps {
   student: Student;
+  updateStudent: (student: Student) => void;
 }
 
-const StudentView = ({ student }: StudentProps) => {
+const StudentView = ({ student, updateStudent }: StudentProps) => {
+  const handleStarChange = (newRating: number) => {
+    let updatedStudent = student;
+    updatedStudent.star_rating = newRating;
+    updateStudent(updatedStudent);
+  };
+
   return (
     <div className="container">
-      <h3 className="p-left-4">
+      <h3>
         Student Record for {student.first_name} {student.last_name}
       </h3>
-      <div className="flex-row-even">
+      <div className="flex-row-between">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Contact Name</th>
+                <th>Relationship</th>
+              </tr>
+            </thead>
+            <tbody>
+              {student.contacts.map(
+                (contact: StudentContact, index: number) => {
+                  return (
+                    <tr key={`${index}-${contact.name}`}>
+                      <td>{contact.name}</td>
+                      <td>{contact.relationship}</td>
+                    </tr>
+                  );
+                }
+              )}
+            </tbody>
+          </table>
+          <div className="p-top-3">
+            <h5>Student Star Rating</h5>
+            <StarRating
+              onChange={handleStarChange}
+              currentStarRating={student.star_rating}
+            />
+          </div>
+        </div>
         <div>
           <div className="record">
             <label>Pupil Admission Number</label>
@@ -189,26 +226,6 @@ const StudentView = ({ student }: StudentProps) => {
             <label>End Date</label>
             <span>{student.end_date}</span>
           </div>
-        </div>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Contact Name</th>
-                <th>Relationship</th>
-              </tr>
-            </thead>
-            <tbody>
-              {student.contacts.map((contact: StudentContact) => {
-                return (
-                  <tr>
-                    <td>{contact.name}</td>
-                    <td>{contact.relationship}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>

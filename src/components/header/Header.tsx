@@ -1,10 +1,14 @@
 // Header
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <div className="p-left-5">
-      <h1>Admin Portal</h1>
-      <h2>Welcome to the admin portal</h2>
+    <div>
+      <h1>
+        <Link to="/">Admin Portal</Link>
+      </h1>
+      <h2>Welcome to the Admin Portal</h2>
     </div>
   );
 };

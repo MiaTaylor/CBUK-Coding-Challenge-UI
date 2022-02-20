@@ -71,6 +71,13 @@ h1 {
   color: #deb887;
 }
 
+h1 a,
+h1 a:focus,
+h1 a:active {
+  color: #deb887;
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -133,6 +140,11 @@ textarea:focus {
 /*--------------------------------------------------------------
 # Tables
 --------------------------------------------------------------*/
+table {
+  overflow: auto;
+  min-width: 550px;
+}
+
 table th,
 td {
   padding: 0.5em;
@@ -173,11 +185,11 @@ td {
 /*--------------------------------------------------------------
 # CSS Flex-Box
 --------------------------------------------------------------*/
-.flex-row-even {
+.flex-row-between {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 /*--------------------------------------------------------------
@@ -214,28 +226,47 @@ td {
 .container {
   padding-top: 2em;
   padding-bottom: 2em;
-  border: 1px solid #deb887;
+  border-top: 1px solid #deb887;
+}
+
+.p-left-right-5 {
+  padding: 0 5em;
+}
+
+.p-top-3 {
+  padding-top: 3em;
 }
 
 .p-bottom-1 {
   padding-bottom: 1em;
 }
 
-.p-left-4 {
-  padding-left: 4em;
-}
-
-.p-left-5 {
-  padding-left: 5em;
-}
-
 .record {
   padding: 1em;
   margin-bottom: 5px;
-  border: 1px solid #deb887;
+  border: 1px solid #b6b6b6;
+  min-width: 350px;
+  min-height: 80px;
 }
 
 .record label {
   color: #deb887;
   padding-right: 1em;
+}
+
+.record span {
+  color: #080808;
+}
+
+.record span::before {
+  content: "\a";
+  white-space: pre;
+}
+
+.yellow {
+  color: #deb887;
+}
+
+.lightgray {
+  color: #efefef;
 }
